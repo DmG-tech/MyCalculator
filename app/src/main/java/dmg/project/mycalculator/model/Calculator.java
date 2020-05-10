@@ -20,7 +20,7 @@ public class Calculator {
     }
 
     public static Number division (double firstArgument, double secondArgument) {
-        if (secondArgument == 0) throw new ArithmeticException();
+        if (secondArgument == 0) throw new ArithmeticException("На 0 делить нельзя");
         return firstArgument/secondArgument;
     }
 }

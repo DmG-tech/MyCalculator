@@ -18,6 +18,7 @@ public class CommandExecutor {
     }
 
     public void executeCommand(Operation operation) {
+        expressionBuilder.clearError();
         switch (operation) {
             case ADDITION:
             case SUBTRACTION:
@@ -26,7 +27,7 @@ public class CommandExecutor {
                 currentOperation = operation;
                 if (expressionBuilder.getString() == null || expressionBuilder.getString().isEmpty()) return;
                 firstArgument = Double.parseDouble(expressionBuilder.getString());
-                expressionBuilder.clear();
+                expressionBuilder.clearExpression();
                 break;
             case DELETE:
                 if (expressionBuilder.getString() == null || expressionBuilder.getString().isEmpty()) return;
@@ -35,18 +36,19 @@ public class CommandExecutor {
             case EQUAL:
                 if (currentOperation == Operation.EQUAL || expressionBuilder.getString() == null || expressionBuilder.getString().isEmpty()) return;
                 secondArgument = Double.parseDouble(expressionBuilder.getString());
-                expressionBuilder.clear();
+                expressionBuilder.clearExpression();
                 try {
                     expressionBuilder.updateExpression(executeArithmeticOperation());
                 }
                 catch (ArithmeticException e) {
                     expressionBuilder.setString("");
+                    expressionBuilder.printError(e.getMessage());
                 }
                 currentOperation = operation;
             break;
             case CLEAR:
                 currentOperation = operation;
-                expressionBuilder.clear();
+                expressionBuilder.clearExpression();
             break;
         }
     }

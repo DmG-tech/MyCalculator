@@ -24,12 +24,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         initializeButtons();
-        expressionBuilder = new ExpressionBuilder(findViewById(R.id.expression));
+        expressionBuilder = new ExpressionBuilder(findViewById(R.id.expression), findViewById(R.id.error));
         commandExecutor = new CommandExecutor(expressionBuilder);
 
         View.OnClickListener numButtonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                expressionBuilder.clearError();
                 expressionBuilder.updateExpression(Symbol.getNumber(v.getId()));
             }
         };
