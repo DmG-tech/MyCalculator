@@ -35,7 +35,7 @@ public class CommandExecutor {
                 try {
                     expressionBuilder.updateExpression(executeArithmeticOperation());
                 }
-                catch (IllegalArgumentException e) {
+                catch (ArithmeticException e) {
                     expressionBuilder.setString("");
                 }
                 currentOperation = operation;
@@ -47,7 +47,7 @@ public class CommandExecutor {
         }
     }
 
-    private Number executeArithmeticOperation() throws IllegalArgumentException {
+    private Number executeArithmeticOperation() throws ArithmeticException {
         Number result = 0;
         switch (currentOperation) {
             case ADDITION: result = Calculator.addiction((double) firstArgument, (double) secondArgument);

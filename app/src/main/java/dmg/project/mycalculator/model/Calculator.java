@@ -17,7 +17,7 @@ public class Calculator {
     }
 
     public static Number division (double firstArgument, double secondArgument) {
-        if (secondArgument == 0) throw new IllegalArgumentException();
+        if (secondArgument == 0) throw new ArithmeticException();
         return firstArgument/secondArgument;
     }
 }
