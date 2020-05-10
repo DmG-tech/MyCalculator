@@ -2,6 +2,9 @@ package dmg.project.mycalculator.controller;
 
 import dmg.project.mycalculator.R;
 
+/**
+ * Набор поддерживаемых операций.
+ */
 public enum Operation {
     ADDITION,
     SUBTRACTION,

@@ -2,6 +2,9 @@ package dmg.project.mycalculator.controller;
 
 import dmg.project.mycalculator.R;
 
+/**
+ * Вспомогательный класс с одним методом, который возвращает строковое представление введенного символа.
+ */
 public class Symbol {
 
     private Symbol(){}

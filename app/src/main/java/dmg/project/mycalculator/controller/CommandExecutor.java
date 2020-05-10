@@ -3,6 +3,10 @@ package dmg.project.mycalculator.controller;
 import dmg.project.mycalculator.model.Calculator;
 import dmg.project.mycalculator.ExpressionBuilder;
 
+/**
+ * Класс обработчик.
+ * Обрабатывает и исполняет команды, связанные с кнопками "действия".
+ */
 public class CommandExecutor {
     private ExpressionBuilder expressionBuilder;
     private Operation currentOperation;

@@ -2,9 +2,12 @@ package dmg.project.mycalculator;
 
 import android.widget.TextView;
 
+/**
+ * Класс отвечает за форматирование и вывод результирующей строки на экран.
+ */
 public class ExpressionBuilder {
     private TextView textView;
-    private StringBuilder expression = new StringBuilder("");
+    private StringBuilder expression = new StringBuilder();
 
     private void updateTextView() {
         textView.setText(expression.toString());
@@ -37,7 +40,7 @@ public class ExpressionBuilder {
     }
 
     public void clear() {
-        expression = new StringBuilder("");
+        expression = new StringBuilder();
         updateTextView();
     }
 

@@ -1,5 +1,8 @@
 package dmg.project.mycalculator.model;
 
+/**
+ * Класс производит основные арифметические операции над числами.
+ */
 public class Calculator {
 
     private Calculator() {}
