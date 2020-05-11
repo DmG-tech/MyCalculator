@@ -59,4 +59,10 @@ public class ExpressionBuilder {
     public void clearError() {
         textViewForError.setText("");
     }
+
+    public String checkZero(Number n) {
+        String result = String.valueOf(n);
+        if (result.endsWith(".0")) return result.substring(0, result.indexOf("."));
+        return result;
+    }
 }

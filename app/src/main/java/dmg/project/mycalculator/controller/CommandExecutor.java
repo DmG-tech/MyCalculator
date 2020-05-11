@@ -38,7 +38,7 @@ public class CommandExecutor {
                 secondArgument = Double.parseDouble(expressionBuilder.getString());
                 expressionBuilder.clearExpression();
                 try {
-                    expressionBuilder.updateExpression(executeArithmeticOperation());
+                    expressionBuilder.updateExpression(expressionBuilder.checkZero(executeArithmeticOperation()));
                 }
                 catch (ArithmeticException e) {
                     expressionBuilder.setString("");
