@@ -11,6 +11,7 @@ public class ExpressionBuilder {
     private StringBuilder expression = new StringBuilder();
 
     private void updateTextView() {
+        checkZero();
         textViewForExpression.setText(expression.toString());
     }
 
@@ -58,5 +59,11 @@ public class ExpressionBuilder {
 
     public void clearError() {
         textViewForError.setText("");
+    }
+
+    private void checkZero() {
+        if (expression.toString().endsWith(".0")) {
+            expression.delete(expression.indexOf("."), expression.length());
+        }
     }
 }
