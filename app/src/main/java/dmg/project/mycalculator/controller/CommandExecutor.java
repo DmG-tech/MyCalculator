@@ -33,6 +33,7 @@ public class CommandExecutor {
                 if (expressionBuilder.getString().isEmpty())
                     expressionBuilder.updateExpression("-");
                 else {
+                    currentOperation = operation;
                     firstArgument = Double.parseDouble(expressionBuilder.getString());
                     expressionBuilder.clearExpression();
                 }
